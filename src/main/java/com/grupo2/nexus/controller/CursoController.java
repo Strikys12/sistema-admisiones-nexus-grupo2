@@ -13,7 +13,9 @@ import jakarta.persistence.*;
 import lombok.RequiredArgsConstructor;
 import java.util.List;
 import com.grupo2.nexus.model.entity.Curso;
-import com.grupo2.nexus.service.CursoService;
+import com.grupo2.nexus.service.cursoService;
+import lombok.*;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +26,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/cursos")
 @RequiredArgsConstructor
 
-
-
 public class CursoController {
 
-    private final CursoService cursoService;
+    private final cursoService cursoService;
 
     @GetMapping
     public ResponseEntity<List<Curso>> getAll() {
