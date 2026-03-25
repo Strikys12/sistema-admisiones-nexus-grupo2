@@ -37,7 +37,11 @@ public class UsuarioController {
     public ResponseEntity<UsuarioDto> update(
             @PathVariable Long id,
             @RequestBody Usuario usuario) {
-        // Sincronizamos el ID de la URL con el objeto para evitar inconsistencias
+
+        // IMPORTANTE: Le decimos al objeto que su ID es el que viene en la URL
+        // Esto evita que alguien intente actualizar el usuario 5 mandando el ID 10 en el JSON.
+        usuario.setId_usuario(id);
+
         return ResponseEntity.ok(usuarioService.update(id, usuario));
     }
 

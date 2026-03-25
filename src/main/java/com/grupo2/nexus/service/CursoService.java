@@ -1,6 +1,8 @@
 package com.grupo2.nexus.service;
 import com.grupo2.nexus.model.dto.CursoDto;
 import com.grupo2.nexus.model.entity.Curso;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -35,6 +37,7 @@ public class CursoService {
     }
 
     public CursoDto save(Curso curso) {
+        curso.setFechaCreacion(LocalDateTime.now());
         if (curso.getCuposDisponibles() == null){
             curso.setCuposDisponibles(curso.getCuposMaximos());
         }

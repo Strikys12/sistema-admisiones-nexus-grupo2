@@ -26,7 +26,8 @@ import com.grupo2.nexus.model.enums.Activo;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
+    @Column(name = "id_usuario")
+    private Long id;
 
     @Embedded
     private DatosPersonales datosPersonales;
