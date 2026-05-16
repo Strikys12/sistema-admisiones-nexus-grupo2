@@ -11,7 +11,7 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("API de Sistema de Admisiones Nexus")
+                .title("API de Admisiones Y Registros Nexus")
                 .version("1.0.0")
                 .description("Documentación técnica de servicios REST."));
     }
