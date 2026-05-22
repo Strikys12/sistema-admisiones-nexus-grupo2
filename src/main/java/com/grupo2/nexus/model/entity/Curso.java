@@ -4,6 +4,7 @@ import java.math.BigDecimal; // IMPORTANTE: Para el manejo de dinero
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import com.grupo2.nexus.model.enums.Activo;
@@ -60,8 +61,9 @@ public class Curso {
     private LocalDateTime fechaCreacion;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", nullable = false)
+    @JoinColumn(name = "usuario_id", nullable = true)
     @ToString.Exclude
+    @JsonIgnore
     private Usuario usuario;
 
     @PrePersist

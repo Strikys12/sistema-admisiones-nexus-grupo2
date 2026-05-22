@@ -25,11 +25,6 @@ public class DatosPersonales {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @CreatedDate
-    private LocalDateTime createAt;
-
-    @Column(nullable = false, length = 255)
-    private String contrasena;
 
 
     private String telefono;

@@ -44,6 +44,12 @@ public class Usuario{
     @Embedded
     private DatosPersonales datosPersonales;
 
+    @Column(nullable = false, unique = true) // No nulo y único en la base de datos
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private Activo activo;
 
@@ -60,14 +66,6 @@ public class Usuario{
     @Column(name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion;
 
-    public void setUsername(String username) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setUsername'");
-    }
 
-    public void setPassword(String password) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPassword'");
-    }
 
 }
